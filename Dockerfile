@@ -6,7 +6,7 @@ ENV PORT=3000
 ENV NODE_ENV=production
 ENV NPM_CONFIG_PRODUCTION=false
 WORKDIR /app
-COPY package*.json yarn.lock* ./
+COPY readme.md package*.json yarn.lock* ./
 COPY . .
 
 FROM base as dev
