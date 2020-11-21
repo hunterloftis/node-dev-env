@@ -1,0 +1,16 @@
+# docker-compose build dev
+# docker-compose run --service-ports --rm dev
+
+version: '3.5'
+services:
+    dev:
+        user: "1000"
+        env_file: .env
+        build:
+            context: .
+            target: dev
+        volumes:
+            - ".:/app:consistent"
+        command: /bin/sh
+        ports:
+            - "3000:3000"
